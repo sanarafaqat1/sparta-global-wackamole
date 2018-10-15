@@ -16,4 +16,8 @@ let lastHome;
 function randomTime(min,max) {
          return Math.round(Math.random() * (max - min) + min);
 }
-  
+
+// idx catches function
+  function holeRandom(hole) {
+
+  }
