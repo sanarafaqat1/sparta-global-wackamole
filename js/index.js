@@ -21,8 +21,8 @@ function randomTime(min,max) {
 
 // idx catches function
 // holeRandom picks a random hole , which takes a list of hole
-//getmeadomelement    
+//getmeadomelement
   function holeRandom(hole) {
       var numHole = Math.floor(Math.random()* hole.length);
       var hole = hole[numHole];
-  }
+  } console.log(hole);
