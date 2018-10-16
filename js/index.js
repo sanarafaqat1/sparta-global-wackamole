@@ -1,18 +1,19 @@
-// Variables to use throughout the game
-var scoreboard = document.querySelector('.score');
-var holes = document.querySelectorAll('.Hole');
-var mole = document.querySelectorAll('.Mole');
-var score_show = document.querySelector('score_show');
-var btnClick = document.querySelector('.button');
-var start_screen = document.querySelector('start_screen');
+
+   //Variables to use throughout the game
+   var scoreboard = document.querySelector('.score');
+   var holes = document.querySelectorAll('.Hole');
+   var mole = document.querySelectorAll('.Mole');
+   var score_show = document.querySelector('score_show');
+   var btnClick = document.querySelector('.button');
+   var start_screen = document.querySelector('start_screen');
 
 
-
-
-// Variable with Let can have a Block Scope
-let score = 0;
-let timesUp = false;
-
+   // Variable with Let can have a Block Scope
+   var score = 0;
+   var timesUp = false;
+   var lastHole;
+   var pop;
+   var choice;
 
 //Minimum and Maximum time in the randomTime function
 //Math round returns the number nearest to the value of a number rounded to the nearest integer
@@ -28,5 +29,20 @@ function randomTime(min,max) {
 function randomHole(holes) {
        var numbHole = Math.floor(Math.random() * holes.length);
        var hole = holes[numbHole];
-       console.log(hole);
+       if (hole === lastHole) {
+         console.log('Same One');
+         return randomHole(holes)
+       }
+//this is making sure the last hole that came up does not come up again, as it's 1-6 propability that it will
+       lastHole = hole;
+       return hole;
    }
+
+  //Funcation popUp to bring up the Moles
+
+  function popUp() {
+    var time = randomTime(200, 2000);
+    var hole = randomHole(holes);
+    hole.classList.add('up');
+       // console.log(time, hole);
+    }
