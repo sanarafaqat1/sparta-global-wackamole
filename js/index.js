@@ -13,12 +13,15 @@
    var timesUp = false;
    var lastHole;
    var pop;
-   var choice;
+   // var choice;
 
 //Minimum and Maximum time in the randomTime function
 //Math round returns the number nearest to the value of a number rounded to the nearest integer
 // Function that gives random amount of time between min and max
 // A utility
+// document.addEventListener("DOMContentLoaded", function (event) {
+
+
 function randomTime(min,max) {
        return Math.round(Math.random() * (max - min) + min);
 }
@@ -39,10 +42,16 @@ function randomHole(holes) {
    }
 
   //Funcation popUp to bring up the Moles
-
+//Random hole in random amount of time
   function popUp() {
-    var time = randomTime(200, 2000);
+    var time = randomTime(200, 3 000);
     var hole = randomHole(holes);
     hole.classList.add('up');
-       // console.log(time, hole);
+       console.log(time, hole);
     }
+    // setTimeout(() => {
+    //   holes.classList.remove('up');
+    //   score_show.classList.remove('add');
+    //   if (!timesUp) popUp();
+    // (time);})
+// })
