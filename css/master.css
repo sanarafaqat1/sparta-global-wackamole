@@ -1,49 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+  font-size: 22px;
+  font-weight: 300;
+  color: #383838;
+}
+
 body {
-  background-color: salmon;
+  background: #895F66;
+  width: 100%;
+  height: 100vh;
 }
+
 h1 {
- text-align: center;
-}
-
-.main_game{
-  display: flex;
-  flex-direction: column;
-  background-color: papayawhip;
-  padding: 20px;
-  border-radius: 50px;
-  margin-left: 50px;
-  margin-right: 50px;
-}
-.top_3{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-.bottom_3{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-.container{
-  width: 400px;
-  display: flex;
-  justify-content: center;
-  position:inherit;
   text-align: center;
-  border-radius: 8px;
-  align-self: center;
-  margin-left: 38%;
+  font-size: 200%;
+  margin: 0.5rem 0;
+  font-family:monospace;
 }
 
-.Hole {
+.start-screen {
+  margin-left: auto;
+  margin-right: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background:#813134;
+  z-index: 999;
+}
+
+.start-screen .splash-scree{
+  width: 300px;
+  height: 360px;
+  background: #ffd527;
+  position: absolute;
+
+}
+.header {
+  background-color: white;
+
+}
+
+.start-screen.hide {
+  display: none;
+}
+
+.myScore {
+  display: none;
+}
+
+.myScore.show {
+  display: block;
+  font-size: 240%;
+  margin: 1rem 0;
+}
+
+.button {
+  text-align: center;
+  width: 100%;
+  height: 71px;
+  margin: 16px 0;
+}
+
+.button button {
+  text-transform: uppercase;
+  color: black;
+  padding: 0.5rem 0.8rem;
+  background: #ea4872;
+  border-radius: 8px;
+  border: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  /* transition: box-shadow 0.3s ease-in-out, opacity 0.3s ease-in-out; */
+  opacity: 1;
+}
+
+.button button:hover {
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
+}
+
+.button button:focus {
+  outline: 0;
+}
+
+.button button.hide {
+  opacity: 0;
+}
+
+.score-block {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+}
+
+.score {
+  display: inline-block;
+  font-size: 200%;
+  background: pink;
+  padding: 8px 17px;
+  border-radius: 8px;
+  transition: background 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.score.add {  //changes the background colour also the font colour when points are added
+  background: red;
+  color: #fff;
+  transform: scale(1.3);
+  opacity: 0.8;
+}
+
+.game {
+  max-width: 600px;
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.hole {
   flex: 1 0 33.33%;
   overflow: hidden;
   position: relative;
 }
 
-.Hole:after {
+.hole:after {
   display: block;
-  background: url(../images/dirt.jpg) bottom center no-repeat;
+  background: url(../img/bush.svg) bottom center no-repeat;
   background-size: contain;
   content: '';
   width: 100%;
@@ -53,75 +138,16 @@ h1 {
   bottom: -30px;
 }
 
-.Mole {
-  flex: 1 0 33.33%;
-  overflow: hidden;
-  position: relative;
-
-}
-.Mole:after {
-  background: url('../image/mole.jpg') bottom center no-repeat;
+.mole {
+  background: url('../img/mouse.svg') bottom center no-repeat;
   background-size: 60%;
   position: absolute;
   top: 100%;
   width: 100%;
   height: 100%;
-  transition: all 0.5s;
+  transition: all 0.7s;
 }
 
-.hole.up .Mole_1 {
+.hole.up .mole {
   top: 0;
-}
-
-button {
-color: red;
-padding: 8px, 12px;
-background: black;
-border-radius: 6px;
-border: 0;
-cursor: pointer;
-}
-.score_show {
-  position: absolute;
-  top: 2%;
-  right: 2%;
-}
-
-.scoreboard {
-  display: inline-block;
-  font-size: 150%;
-}
-button {
-  width: 100px;
-  height: 100px;
-  border-radius: 50px;
-}
-#Button_Start {
-    width: 100px;
-    height: 100px;
-    border-radius: 50px;
-}
-.footer {
-   position: fixed;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-   background-color: white;
-   color: black;
-   text-align: center;
-}
-/* .button {
-  position: relative;
-  top: 10%;
-} */
-/*
-.title {
-  position:fixed;
-  left: 0;
-  top:0;
-  width: 100%;
-  height: 5%;
-  background-color: red;
-  color: black;
-  text-align: center;
 }
