@@ -1,82 +1,22 @@
-<!-- <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-     <link rel="stylesheet" href="css/master.css">
-
-    <title></title>
-  </head>
-  <body>
-
-     <div class="start_screen">
-       <div class="title">
-         <h1>Wack-A-Mole</h1>
-        </div>
-           <div class="container">
-             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-           </div>
-
-                  </div> -->
-                  <!-- <div class="score_show">
-                    <span class="score">0</span>
-                  </div>
-           </div>
-     </div> -->
-   <!-- This area represents the score div, where the score will be stored  -->
-
-  <!-- These are the 4 holes the users will be playing with  -->
-
-  <!-- input type image source-->
-    <!-- <div class="main_game">
-      <div class="top_3">
-        <div class="Hole Hole_1">
-          <button type="button" value="button 1" id="mole_1" class="mole">Mole 4</button>
-        </div>
-        <div class="Hole Hole 2">
-          <button type="button" value="button 1" id="mole_2" class="mole">Mole 4</button>
-
-        </div>
-        <div class="Hole Hole 3">
-         <button type="button" value="button 1" id="mole_3" class="mole">Mole 3</button>
-        </div>
-      </div>
-      <br><br>
-      <div class="bottom_3">
-        <div class="Hole Hole 4">
-          <button type="button" value="button 1" id="mole_4" class="mole">Mole 4</button>
-        </div>
-        <div class="Hole Hole 5">
-          <button type="button" value="button 1" id="mole_5" class="mole">Mole 5</button>
-        </div>
-        <div class="Hole Hole 6">
-          <button type="button" value="button 1" id="mole_6" class="mole">Mole 6</button>
-        </div>
-      </div>
-      </div> -->
-
-    <!-- Script Tag javascript -->
-       <!-- </script>
-       <script type="text/javascript" src="js/index.js">
-       </script>
-  </body>
-</html> -->
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Game</title>
+  <title>Whack a Mouse</title>
   <link rel="stylesheet" href="css/master.css">
   <link rel="shortcut icon" type="image/png" href="https://vignette.wikia.nocookie.net/fictionalcharacters/images/a/a4/Mickey_mouse.png/revision/latest?cb=20130312004950">
+      <link rel="HTML" href="frontpage.html">
 </head>
 <body>
-  <h1>Wack a Mol</h1>
-  <div class="start-screen">
+  <h1>Whack a Mouse</h1>
+  <!-- <a href="index.html">  <button id ="back_btn" type="button" name="button">GO TO GAME</button></a> -->
+
+  <div class="begin-screen">
     <div class="popUp">
       <div class="button">
         <button>Start</button>
         <div class="myScore"></div>
+
       </div>
     </div>
   </div>
@@ -85,6 +25,11 @@
     <span class="score">0</span>
   </div>
 
+<div class="border">
+  <div class="button_time">
+    <p>Time</p>
+    <p id='timer'>10</p>
+  </div>
   <div class="game">
     <div class="hole hole1">
       <div class="mole"></div>
@@ -104,9 +49,19 @@
     <div class="hole hole6">
       <div class="mole"></div>
     </div>
+    <div class="hole hole7">
+      <div class="mole"></div>
+    </div>
+    <div class="hole hole8">
+      <div class="mole"></div>
+    </div>
+    <div class="hole hole6">
+      <div class="mole"></div>
+    </div>
   </div>
-
-  <audio src="sounds/bonk.WAV"></audio>
+</div>
+  <audio src="sounds/hit.WAV"></audio>
   <script src="js/index.js"></script>
+
 </body>
 </html>

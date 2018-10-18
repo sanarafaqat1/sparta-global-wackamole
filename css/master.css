@@ -9,42 +9,50 @@
 }
 
 body {
-  background: #895F66;
+  background: lightgreen;
   width: 100%;
   height: 100vh;
 }
 
 h1 {
+  margin-top: 3%;
   text-align: center;
-  font-size: 200%;
+  font-size: 180%;
   margin: 0.5rem 0;
   font-family:monospace;
 }
 
-.start-screen {
+.border {
+   background-color: lightblue;
+   width:50%;
+   height: 75%;
+   margin-left: auto;
+   margin-right: auto;
+   border-radius: 15px;
+   box-shadow: 5px 10px 8px #888888;
+   text-align: center;
+   border: solid black;
+
+}
+.begin-screen {
   margin-left: auto;
   margin-right: auto;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  background:#813134;
   z-index: 999;
 }
 
-.start-screen .splash-scree{
+.begin-screen .splash-screen{
   width: 300px;
   height: 360px;
   background: #ffd527;
   position: absolute;
-
-}
-.header {
-  background-color: white;
-
+  margin-top: 3%;
 }
 
-.start-screen.hide {
+.begin-screen.hide {
   display: none;
 }
 
@@ -54,8 +62,9 @@ h1 {
 
 .myScore.show {
   display: block;
-  font-size: 240%;
-  margin: 1rem 0;
+  font-size: 100%;
+  margin: 16px 0;
+  margin-top: 40%
 }
 
 .button {
@@ -63,28 +72,27 @@ h1 {
   width: 100%;
   height: 71px;
   margin: 16px 0;
+  position: relative;
 }
 
 .button button {
   text-transform: uppercase;
   color: black;
   padding: 0.5rem 0.8rem;
-  background: #ea4872;
+  background: salmon;
   border-radius: 8px;
   border: 0;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   cursor: pointer;
-  /* transition: box-shadow 0.3s ease-in-out, opacity 0.3s ease-in-out; */
-  opacity: 1;
+
 }
 
-.button button:hover {
+/* .button button:hover {
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
-}
+} */
 
-.button button:focus {
+/* .button button:focus {
   outline: 0;
-}
+} */
 
 .button button.hide {
   opacity: 0;
@@ -98,26 +106,52 @@ h1 {
 
 .score {
   display: inline-block;
-  font-size: 200%;
-  background: pink;
+  font-size: 100%;
+  background: white;
+  border: solid salmon;
   padding: 8px 17px;
   border-radius: 8px;
-  transition: background 0.2s ease-in-out, transform 0.2s ease-in-out;
+  /* transition: background 0.2s ease-in-out, transform 0.2s ease-in-out; */
 }
 
-.score.add {  //changes the background colour also the font colour when points are added
-  background: red;
-  color: #fff;
-  transform: scale(1.3);
-  opacity: 0.8;
-}
+/* .score.add {  /*changes the background colour also the font colour when points are added */
+  /* transform: scale(1.3); */
+  /* opacity: 0.8;
+  }
+  */
 
+#start_btn{
+  margin-left:25%;
+  right:50%;
+  margin-top:2%;
+  width:50%;
+  height:50%;
+  border: solid salmon;
+  pointer: cursor;
+}
+  /* #back_btn {
+    margin-right: 80%;
+  } */
+#timer {  //* this is for the timer function in the border div */
+  text-transform: uppercase;
+  color: black;
+  padding: 0.5rem 0.8rem;
+  background: salmon;
+  border-radius: 8px;
+  border: 0;
+  cursor: pointer;
+  width: auto;
+  text-align: center;
+
+}
 .game {
   max-width: 600px;
   height: 400px;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* this keeps the game in order */
   margin: 0 auto;
+  cursor: pointer;
+  background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Tools-hammer.svg/2000px-Tools-hammer.svg.png")
 }
 
 .hole {
@@ -134,7 +168,7 @@ h1 {
   width: 100%;
   height: 70px;
   position: absolute;
-  z-index: 2;
+  /* z-index: 2; */
   bottom: -30px;
 }
 

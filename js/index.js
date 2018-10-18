@@ -1,15 +1,16 @@
 
 var holes = document.querySelectorAll('.hole');
-var scoreBoard = document.querySelector('.score');
+var displayLevel= document.querySelector('.score');
 var moles = document.querySelectorAll('.mole');
 var btnStart = document.querySelector('button');
-var bonkSound = document.querySelector('audio');
-var startScreen = document.querySelector('.start-screen');
+var startScreen = document.querySelector('.begin-screen');
 var showScore = document.querySelector('.myScore');
+var countDownDate = new Date("Jan 5, 2019 15:37:25").getTime();
 
 var score = 0;
 var lastHole;
 var timesUp = false; // timesup is set to false
+var time = 10;
 
 // this function gives us a random amount of time between the min and the max
 //Min is mili seconds and seconds, Math.round, rounds the number to the nearest integer
@@ -41,50 +42,58 @@ function popUp() { //popUp function pops the mouse image up
 
   //because now the image doesnt disappear we now need to remove the class of 'up'
   //setTimeout is after how many seconds time, when that happens we take the hole and remove the class of 'up'
-  // but then we add it by using the variable scoreBoard.classList
+  // but then we add it by using the variable displayLevel.classList
   setTimeout(() => {
     hole.classList.remove('up');
-    scoreBoard.classList.remove('add');
+    displayLevel.classList.remove('add');
     if (!timesUp) popUp(); // i added this after creating the variable timesUp, so that if time is not up then run popUp again
+
   }, time);
 }
 
 
 function start() { //this function starts the game
   score = 0; // this restarts the score board from 0, so when playing again you don't get confused
-  scoreBoard.textContent = score;
+  displayLevel.textContent = score;
   timesUp = false; // this is so that when ur running the game again if restarts with false
-  scoreBoard.classList.remove('add');
+  displayLevel.classList.remove('add');
   startScreen.classList.add('hide');
+
+  setInterval(function(){
+    if(time > 0){
+      time--;
+      console.log(time);
+      document.getElementById('timer').innerHTML = time;
+    }
+  }, 1000);
 
   // start popUp
   popUp(); // this will then run the game
 
+  //true variable stops the mice from coming up, which then stops the game
+  // This function is stating that when the game goes to 15 seconds the timesUp is = true
   setTimeout(() => {
-    timesUp = true;
+    timesUp = true; //this is changed to true when
     startScreen.classList.remove('hide');
 
     if (score > 0) {
       showScore.classList.add('show');
-      var message = 'Your score: ' + score + (score >= 10 ? " GREAT!" : '');
+      var message = 'Your score is: ' + score + (score >= 10  ? " GREAT!" : '');
       showScore.textContent = message;
     }
 
-  }, 20500);
+  }, 10000);// The game last for 15 seconds, and this is shown in miliseconds
 }
-
-function bonk(e) {
-  bonkSound.currentTime = 0;
+// console.log(setTimeout);
+function hit(e) { // e is for the event that hit function
   if (!timesUp) {
-    bonkSound.play();
-    scoreBoard.classList.add('add');
+    displayLevel.classList.add('add');
     score++;
-    scoreBoard.textContent = score;
+    displayLevel.textContent = score;
   }
 }
-
-moles.forEach(mole => {
-  mole.addEventListener('click', bonk);
+moles.forEach(mole => {   //this listens to each of the mole in the html
+  mole.addEventListener('click', hit);
 });
 
 btnStart.addEventListener('click', start);
