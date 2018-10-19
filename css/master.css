@@ -60,11 +60,11 @@ h1 {
   display: none;
 }
 
-.myScore.show {
+.myScore.show { /* This div css lets me move the output of the score at the bottom*/
   display: block;
   font-size: 100%;
   margin: 16px 0;
-  margin-top: 40%
+  margin-top: 45%
 }
 
 .button {
@@ -86,13 +86,6 @@ h1 {
 
 }
 
-/* .button button:hover {
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
-} */
-
-/* .button button:focus {
-  outline: 0;
-} */
 
 .button button.hide {
   opacity: 0;
@@ -111,14 +104,8 @@ h1 {
   border: solid salmon;
   padding: 8px 17px;
   border-radius: 8px;
-  /* transition: background 0.2s ease-in-out, transform 0.2s ease-in-out; */
-}
 
-/* .score.add {  /*changes the background colour also the font colour when points are added */
-  /* transform: scale(1.3); */
-  /* opacity: 0.8;
-  }
-  */
+}
 
 #start_btn{
   margin-left:25%;
@@ -151,7 +138,6 @@ h1 {
   flex-wrap: wrap; /* this keeps the game in order */
   margin: 0 auto;
   cursor: pointer;
-  background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Tools-hammer.svg/2000px-Tools-hammer.svg.png")
 }
 
 .hole {

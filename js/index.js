@@ -1,4 +1,3 @@
-
 var holes = document.querySelectorAll('.hole');
 var displayLevel= document.querySelector('.score');
 var moles = document.querySelectorAll('.mole');
@@ -38,7 +37,8 @@ function popUp() { //popUp function pops the mouse image up
   var hole = randomHole(holes);
      console.log('popUp');
   hole.classList.add('up'); //adding the class up which triggers the css to be top 0 , hole.up
-
+  var audio = new Audio('sounds/hit.WAV');
+  audio.play();
 
   //because now the image doesnt disappear we now need to remove the class of 'up'
   //setTimeout is after how many seconds time, when that happens we take the hole and remove the class of 'up'
