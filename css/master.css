@@ -21,7 +21,11 @@ h1 {
   margin: 0.5rem 0;
   font-family:monospace;
 }
+.instructions {
+  align-content: center;
+  border: solid black;
 
+}
 .border {
    background-color: lightblue;
    width:50%;
