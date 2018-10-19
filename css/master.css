@@ -1,131 +1,177 @@
-body {
-  background-color: salmon;
-  width: 100%;
-  height:100%;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+  font-size: 22px;
+  font-weight: 300;
+  color: #383838;
 }
+
+body {
+  background: lightgreen;
+  width: 100%;
+  height: 100vh;
+}
+
 h1 {
+  margin-top: 3%;
   text-align: center;
-  font-size: 200%;
+  font-size: 180%;
+  margin: 0.5rem 0;
+  font-family:monospace;
+}
+.instructions {
+  align-content: center;
+  border: solid black;
 
 }
-#button {
-  margin-left: 50%;
-  margin-right:auto;
+.border {
+   background-color: lightblue;
+   width:50%;
+   height: 75%;
+   margin-left: auto;
+   margin-right: auto;
+   border-radius: 15px;
+   box-shadow: 5px 10px 8px #888888;
+   text-align: center;
+   border: solid black;
+
 }
-/* .start_screen {
-  position: absolute;
+.begin-screen {
+  margin-left: auto;
+  margin-right: auto;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-} */
-.main_game{
-  display: flex;
-  flex-direction: column;
-  background-color: papayawhip;
-  padding: 20px;
-  border-radius: 50px;
-  margin-left: 50px;
-  margin-right: 50px;
-}
-.top_3{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-.bottom_3{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-.container{
-  width: 400px;
-  display: flex;
-  justify-content: center;
-  position:inherit;
-  text-align: center;
-  border-radius: 8px;
-  align-self: center;
-  margin-left: 38%;
+  z-index: 999;
 }
 
-#player {
-  text-align: center;
+.begin-screen .splash-screen{
+  width: 300px;
+  height: 360px;
+  background: #ffd527;
+  position: absolute;
+  margin-top: 3%;
 }
-#computer {
-  text-align: center;
+
+.begin-screen.hide {
+  display: none;
 }
-#winner {
-  text-align: center;
+
+.myScore {
+  display: none;
 }
-#button {
-  text-align:center;
+
+.myScore.show { /* This div css lets me move the output of the score at the bottom*/
+  display: block;
+  font-size: 100%;
+  margin: 16px 0;
+  margin-top: 45%
+}
+
+.button {
+  text-align: center;
   width: 100%;
-  height:51px;
+  height: 71px;
+  margin: 16px 0;
+  position: relative;
 }
-button {
-color: red;
-padding: 8px, 12px;
-background: black;
-border-radius: 6px;
-border: 0;
-cursor: pointer;
+
+.button button {
+  text-transform: uppercase;
+  color: black;
+  padding: 0.5rem 0.8rem;
+  background: salmon;
+  border-radius: 8px;
+  border: 0;
+  cursor: pointer;
+
 }
-.score_show {
+
+
+.button button.hide {
+  opacity: 0;
+}
+
+.score-block {
   position: absolute;
   top: 2%;
   right: 2%;
 }
 
-.scoreboard {
+.score {
   display: inline-block;
-  font-size: 150%;
-}
-button {
-  width: 100px;
-  height: 100px;
-  border-radius: 50px;
-}
-#Button_Start {
-    width: 100px;
-    height: 100px;
-    border-radius: 50px;
-}
-/*
-.title {
-  position:fixed;
-  left: 0;
-  top:0;
-  width: 100%;
-  height: 5%;
-  background-color: red;
-  color: black;
-  text-align: center;
-} */
-.footer {
-   position: fixed;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-   background-color: white;
-   color: black;
-   text-align: center;
-}
-/* .button {
-  position: relative;
-  top: 10%;
-} */
+  font-size: 100%;
+  background: white;
+  border: solid salmon;
+  padding: 8px 17px;
+  border-radius: 8px;
 
-.mole{
-  background: url('../images/mole.jpg') bottom center no-repeat;
-  background-size: 7%;
-  position:
+}
+
+#start_btn{
+  margin-left:25%;
+  right:50%;
+  margin-top:2%;
+  width:50%;
+  height:50%;
+  border: solid salmon;
+  pointer: cursor;
+}
+  /* #back_btn {
+    margin-right: 80%;
+  } */
+#timer {  //* this is for the timer function in the border div */
+  text-transform: uppercase;
+  color: black;
+  padding: 0.5rem 0.8rem;
+  background: salmon;
+  border-radius: 8px;
+  border: 0;
+  cursor: pointer;
+  width: auto;
+  text-align: center;
+
+}
+.game {
+  max-width: 600px;
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap; /* this keeps the game in order */
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.hole {
+  flex: 1 0 33.33%;
+  overflow: hidden;
+  position: relative;
+}
+
+.hole:after {
+  display: block;
+  background: url(../img/bush.svg) bottom center no-repeat;
+  background-size: contain;
+  content: '';
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  /* z-index: 2; */
+  bottom: -30px;
+}
+
+.mole {
+  background: url('../img/mouse.svg') bottom center no-repeat;
+  background-size: 60%;
+  position: absolute;
   top: 100%;
   width: 100%;
   height: 100%;
-  transition: all 0.5s;
+  transition: all 0.7s;
 }
 
 .hole.up .mole {
-  top:0;
+  top: 0;
 }
